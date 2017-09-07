@@ -1,0 +1,80 @@
+Problem : Program to buy a laptop in the Internet
+
+Identify Objects and Behaviors:
+
+Thing (Object)/Entity:
+	Information (Data)/(State):
+	Services (Behaviors)/Actions
+
+
+Things :
+
+	Consumer (Internet Shopper) :
+		Data: Name, Address, Phone
+		Behaviors : buy, search, reviews, compare, return, cancel
+	
+	Internet
+		Data : Amazon, BestBuy, Alibaba, Google, website2,
+			: Group of Websites (Collection of Websites)
+		Behaviors : searchForElectronicWebsites 
+	
+	
+	ElectronicWebsite
+	
+		Data : URL, Product[] products, BankAccount
+		Behaviors : search, sort, display, compare , placeTheOrder
+	
+	Laptop
+	
+		Data : Price, Color, Memory, size, brand, year
+		Behavior: 
+	
+	CreditCard
+	
+		Data : Number, name, company, expiry, security code
+		Behavior : 
+		
+	CreditCardCompany
+	
+		Behavior : authorizeTransaction
+		
+Sequence of invoking behaviors on Objects:
+
+BuyLaptopOnInternet:
+
+	Consumer peter,
+	Internet internet,
+	ElectronicWebsite bestBuy,
+	Laptop myAssistant,
+	CreditCard card,
+	CreditCarCompany visa
+	ShoppingConfirmation response 
+	
+	If Internet.isAvailable
+		peter.searchInInternet -> internet, question : Collection of ElectronicWebsite
+		//peter.findDesirableWebsiteInFirstPage -> Collection of Websites : website
+		pageNumber = 1;
+		Loop
+			if peter.findsNoPages
+				break
+			end
+			peter.findDesirableWebsiteInAPage -> internet, question, page Number : website
+			bestBuy = website;
+			If bestBuy is not empty
+				break
+			else
+				pageNumber = pageNumber + 1
+			end
+		End
+		bestBuy = website
+		If bestBuy is not empty or bestBuy!=null
+			bestBuy.searchForLaptop -> priceRange, color, brand : Collection of Laptop
+			myAssistant = laptop
+			peter.purchaseLaptop -> myAssistant, creditCard, address, bestBuy : ShoppingConfirmation
+			response = shoppingConfirmation
+		Else
+			peter.cantBuyProduct
+	Else
+		peter.browseInternetAfterAWhileBack
+	
+	

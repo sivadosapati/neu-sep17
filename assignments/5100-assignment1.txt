@@ -1,0 +1,214 @@
+1. Hiking
+ 1.1. Rent a ReachNow to drive to mountain rainier on weekends with friends
+ 1.2. On the way, fill the gas
+ 1.3. On the way, eat at restaurant for lunch
+ 1.4. Buy the ticket to get into the park
+ 1.5. Book a hotel or check in the hotel.
+
+Hiker
+	Data: Name, Address, Phone number, Credit card
+	Behaviors: rent, drive, talk, pay, eat, buy, book, check
+ReachNow
+	Data : URL, Car[] cars, BankAccount
+	Behaviors : search, sort, display, compare , placeTheOrder
+Car
+	Data: Brand, Mile, Date, Price
+	Behaviors: 
+Friend
+	Data: Name, Address, Phone number
+	Behaviors: talk
+Gas
+	Data: price, gallon
+    Behaviors:
+Gas Station
+	Data: Gas, Location
+	Behaviors: fill
+
+Restaurant
+	Data: Address, Phone number, Price, Review, Menu, Food, Drink
+	Behaviors: serve, cook
+Park
+	Data: Location, Route, Nature, Operating hours, Gift shop, Current condition
+    Behaviors: sell
+Ticket
+	Data: Price, Date
+	Behaviors:
+Hotel
+	Data: Address, Phone number, Price, Distance from park, Available date, Review, Rate, Room
+Description
+    Behaviors:
+
+Sequence of Flow - Invoke Objects with Behaviors
+Hiker peter
+Friend1 kevin
+Friend2 lily
+Car bmw-suv
+Gas gas
+Gas Station shell
+Restaurant chipotle
+Park yellowstone
+Ticket ticket
+Hotel marriott
+
+If ReachNow.isAvailable
+	peter.findDesitableCar(bmw-suv)
+	if (marriott.room > 0)
+		peter.book("marriott ", date, price);
+	end
+	if peter.hasFriends()
+		peter.inviteFrineds(kevin, lily) 
+		friends.makeAResponse(peter)
+	end
+	if car is out of gas
+		shell.fillGas(gas, gallon)
+	end
+	if (peter.isHungry || kevin.isHungry || lily.isHungry)
+		while (!peter.isfull) 
+			chipotle.serve(food, drink)
+			peter.eat(chipotle, price, food, drink)
+		while (!kevin.isfull) 
+			chipotle.serve(food, drink)
+			kevin.eat(chipotle, price, food, drink)
+		while (!kevin.isfull) 
+			chipotle.serve(food, drink)
+			lily.eat(chipotle, price, food, drink)
+	end
+	if ticket.isAvailable
+		yellowstone.sellTicket(ticket, price, date)
+		peter.buyTicket(ticket, price, date);
+	else 
+		peter.drive(bmw-suv, address);
+end
+
+2. Organize a career fair(Suppose you are the organizer)
+ 2.1. Search for different kinds of companies
+ 2.2. Connect with employers 
+ 2.3.Invite companies that are willing to come
+Organizer
+	Data: name
+	Behaviors: search, rent, host, talk
+Company
+	Data: name, HR, phone
+	Behaviors: come
+HR
+	Data: name, company
+	Behaviors: talk
+
+Sequence of Flow - Invoke Objects with Behaviors
+
+Organizer peter
+Company company
+HR hr
+peter.search(company[])
+peter.findDesirableCompany()
+loop	
+	peter.connect(hr)
+		if hr.agreeToCome(peter)) 
+			company.come == true
+		else
+			company.come == false
+end
+
+
+3. Order Pizza from Pizza Hut
+ 3.1. Log in PizzaHut.com
+ 3.2. select the perfect pizza("cheese pizza")
+ 3.3. make the order
+ 3.4. receive pizza
+
+PizzaHut
+	Data: URL, Phone number, cart
+	Behaviors:
+Pizza
+	Data: price, 
+	Behaviors:
+Customer
+	Data: Name, Address, Phone number, e-mail, username, password, credit card
+	Behaviors: order
+	
+Sequence of Flow - Invoke Objects with Behaviors
+
+Customer peter
+PizzaHut pizzahut.com
+
+if pizzahut.com is available
+	if peter has registered before
+		peter.login(username, password)
+	else
+		peter.register(username, password, email)
+	if "cheese pizza".exsits()
+		peter.select("cheese pizza", amount)
+		peter.order(cart, credit card, address)
+		peter.receivePizza();
+	else
+		peter.notBuyingPizza()
+	
+else
+	peter.cantBuyPizza
+end
+
+4. Design a code sharing platform (eg: Github).
+ 4.1.user log in 
+ 4.2.create repository
+ 4.3.manage files
+Platform 
+	Data: Name, Website
+	Behaviors:
+User 
+	Data: Username, Password
+	Behaviors: login, register, manage files
+Sequence of Flow - Invoke Objects with Behaviors
+
+Platform github
+User peter
+
+if github is available
+	if peter has registered before
+		peter.login(username, password)
+	else
+		peter.register(username, password, email)
+	peter.creatNewRepository(name)
+		if create new file
+			peter.createNewFile(name)
+		if upload file
+			peter.uploadFile(name)
+		if find file
+			peter.findFile(name)
+	
+else
+	peter.cantShareCode
+end
+5. Design a soft-drink/snacks vending machine.
+ 5.1.show inventory
+ 5.2.get selected item from customer
+ 5.3.receive money and return changes
+ 5.4.update inventory
+ 
+Machine
+	Data: Goods, Price
+	Behaviors: receive money, return changes
+Soft-drink
+	Data: Name, Price, 
+	Behaviors: getPicked, isSelected
+Customer
+	Data:Name
+	Behavior: select, purchase, receive changes
+Sequence of Flow - Invoke Objects with Behaviors
+Soft-drink coke
+Machine machine
+
+Customer peter
+
+machine.display(goods)
+if coke.isSelected()
+	if machine.cokeAmount > 0
+		peter.purchase(cash, "coke");
+		machine.returnChanges(coke.price, cash)
+		machine.update()
+	else
+		peter.cantBuy
+end
+	
+		
+
+

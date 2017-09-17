@@ -2,7 +2,7 @@
   /* Each Question carries 2 points.
    * Deadline 22 sept, Friday, 11:59PM.
    * Extra credit points will be added if total points are less than 10.
-   * Try every queston and keep practising from other online sites.
+   * Try every question and keep practising from other online sites.
    * Contact us if any assistance is needed.
    */
 
@@ -46,13 +46,13 @@
 		*
 		}
        4. Write a java class called pizza with (Add detail as needed) : 
-              i. At least 3 attributes :pizza type , unit price and loyalty points. More attributes are welcome to have. 
-              ii. Constructor is needed. Extra-credit for 0.5 point if you write more than 1 right constructor for this class
+              i. Create atleast 3 attributes :pizza type , unit price and loyalty points. More attributes are welcome to have. 
+              ii. Create constructors . Extra-credit of 0.5 point if you write more than 1 right constructor to this class
 
        5. Write a java class called customer (Add detail as needed) : 
-              i. Attributes needed: customer name and what pizzas customer has ordered. 
-              ii. Think about what kind of data structure will be used to record the pizza name and numbers for each kind of pizza.( Give me your thought, Extra credit for 1 point)
-              iii. In main method , sum up how many the customer spend. 
+              i. Create Attributes: customer name and which pizzas customer has ordered. 
+              ii. Think about what kind of data structure can be used to record the pizza name and number of each kind of pizza.( Give me your thought, Extra credit of 1 point)
+              iii. In main method , sum up how much money the customer spent. 
 
 
 

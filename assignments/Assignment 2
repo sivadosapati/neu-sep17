@@ -46,7 +46,7 @@
 		*
 		}
        4. Write a java class called pizza with (Add detail as needed) : 
-              i. At least 3 attributes :pizza type and unit price and points for collection. More attributes are welcome to have. 
+              i. At least 3 attributes :pizza type , unit price and loyalty points. More attributes are welcome to have. 
               ii. Constructor is needed. Extra-credit for 0.5 point if you write more than 1 right constructor for this class
 
        5. Write a java class called customer (Add detail as needed) : 

@@ -1,0 +1,78 @@
+	
+  /* Each Question carries 2 points.
+   * Deadline 22 sept, Friday, 11:59PM.
+   * Extra credit points will be added if total points are less than 10.
+   * Try every question and keep practising from other online sites.
+   * Contact us if any assistance is needed.
+   */
+
+	1. Write a java function to calculate the salary of an employee based on the following rules.
+		i. function takes input of number of hours an employee worked and returns the salary.
+		ii.  The first 36 hours worked are paid at a rate of 15.0, then the next 5 hours are paid at a rate of 15 * 1.5. Hours after that up to a max of 48 are paid at a rate of 15 * 2.
+		
+		Here is the prototype you can work with
+		
+		public double employeeSalary( double hours){
+		
+		*
+		*
+		*
+		}
+
+	2. Write a java function that adds all the digits of an integer until it is single digit.
+		i. function takes an integer as input and returns its sum of digits.
+		ii. for example input = 37, sum = 3+7 = 10, sum = 1+0 = 1. result = 1.
+
+		Here is the prototype you can work with
+	
+		public int addDigits( int input){
+		
+		*
+		*
+		*
+		}
+
+
+	3. Write a java function to print all perfect number between 1 and n.
+		i. Perfect number is a positive integer which is equal to the sum of its proper positive divisors.
+		ii. For example: 6 is the first perfect number, Proper divisors of 6 are 1, 2, 3. Sum of its proper divisors = 1 + 2 + 3 = 6.
+
+		Here is the prototype you can work with
+	
+		public void printPerfectNumbers( int n){
+		
+		*
+		*
+		*
+		}
+       4. Write a java class called pizza with (Add detail as needed) : 
+              i. Create atleast 3 attributes :pizza type , unit price and loyalty points. More attributes are welcome to have. 
+              ii. Create constructors . Extra-credit of 0.5 point if you write more than 1 right constructor to this class
+
+       5. Write a java class called customer (Add detail as needed) : 
+              i. Create Attributes: customer name and which pizzas customer has ordered. 
+              ii. Think about what kind of data structure can be used to record the pizza name and number of each kind of pizza.( Give me your thought, Extra credit of 1 point)
+              iii. In main method , sum up how much money the customer spent. 
+
+
+
+	// EXTRA CREDIT
+	6. Write a Java program that generates an isosceles right angled triangle made of asterisks. 
+		i. function should take input of one equal side as integer. Other than the edges the inner part of the triangle should be empty.
+		ii. For example input is 6. the function should print—
+		
+	   *
+	   **
+	   * *
+	   *  *
+	   *   *
+	   ******
+
+	   Here is the prototype you can work with
+	
+		public void printIsoscelesTriangle( int n){
+		
+		*
+		*
+		*
+		}

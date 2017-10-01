@@ -1,0 +1,21 @@
+Encapsulation
+	- private : protected from outside world
+	- public : accessible from outside world
+	- All the data/attributes should be private
+	- Data should be accessed by Getters (Accessors) and Setters (Mutators)
+		- public <return_type> getXXX()
+		- public void setXXX(<return_type> rt)
+	- Behaviors can be public only if they are accessible
+
+
+Inheritance
+	- use extends keyword for inheriting from another class
+	- data, behaviors and associations are inherited into child classes
+	- parent class constructor will be invoked before invoking the child class constructor
+	- behavior of parent class can be invoked by super.xxx() in the child class
+	- child class will have an option to invoke one of the parent class constructor using super(xxx)
+	- child class can't see private data or behaviors of the parent class
+	- child class can access protected scoped data and behaviors
+	- child classes can add more data and/or behaviors
+	- child classes can override the behaviors of parent classes
+	

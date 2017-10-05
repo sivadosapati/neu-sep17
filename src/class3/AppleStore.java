@@ -1,6 +1,8 @@
 package class3;
 
 public class AppleStore {
+	int x ;
+	public String y;
 	public static void main(String args[]) {
 		iPhone i = new iPhone();
 		System.out.println(i);

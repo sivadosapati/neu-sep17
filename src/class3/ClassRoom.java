@@ -1,4 +1,5 @@
 package class3;
+import java.lang.System;
 
 public class ClassRoom {
 	public static void main(String args[]) {
@@ -10,6 +11,8 @@ public class ClassRoom {
 		takeMoneyFromProtectedWallet("JingYi", siva, 5);
 		takeMoneyFromProtectedWallet("WenHui", siva, 10);
 		takeMoneyFromProtectedWallet("Cara", siva, 25);
+		//AppleStore as = new AppleStore();
+		//as.x = 10;
 
 	}
 

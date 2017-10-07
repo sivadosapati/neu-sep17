@@ -1,0 +1,52 @@
+class Student{
+	char[] name = new char[] {'s', 'i', 'v', 'a'};
+	//String name
+	
+	public boolean isHavingMiddleName(){
+		int spaces = 0;
+		for (char c : name ){
+			if( c == ' ') spaces++;
+		}
+		if( spaces == 2 )return true;
+		return false;
+	}
+}
+
+class String{
+	char ch[];
+	
+	public boolean isStartsWith(String string);
+	public String replace(String string, char c);
+	
+}
+
+
+class StudentWithStringAsName{
+	String name;
+	
+}
+class Pizza{
+	float price = 10;
+}
+
+
+class Test{
+	public static void main(String x[]){
+		int x = 10;
+		boolean b = false;
+		
+		Pizza pizza = new Pizza();
+		pizza.price = 5;
+		
+		String name1 = new String("Siva");
+		
+		String name2 = "Siva";
+		String otherName = "Siva";
+		
+				
+				
+	
+	}
+
+}
+

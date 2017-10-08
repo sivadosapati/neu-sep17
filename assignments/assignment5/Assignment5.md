@@ -148,7 +148,7 @@ Total Cost		       12.69
 
 ## Extra Credit
 
-1. Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.  (Score 2)
+Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.  (Score 2)
  
 	```
 	For example, Given the following matrix: 

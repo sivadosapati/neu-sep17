@@ -10,24 +10,24 @@
 
 ## Question
 
-1. You will be writing code in support of a Dessert Shoppe which sells candy by pound, cookies by the dozen, ice cream, and sundaes (ice cream with a topping). Your software will be used for the checkout system.  
+You will be writing code in support of a __Dessert Shoppe__ which sells candy by pound, cookies by the dozen, ice cream, and sundaes (ice cream with a topping). Your software will be used for the checkout system.  
 
-	To do this, you will implement an inheritance hierarchy of classes derived from a DessertItem abstract superclass.
+To do this, you will implement an inheritance hierarchy of classes derived from a DessertItem abstract superclass.
 
-	The Candy, Cookie, and IceCream classes will be derived from the DessertItem class.
+The __Candy__, __Cookie__, and __IceCream__ classes will be derived from the DessertItem class.
 	
-    The Sundae class will be derived from the IceCream class.
+The __Sundae__ class will be derived from the __IceCream__ class.
 	
-    You will also write a Checkout class which maintains a list (Vector) of DessertItem's.
+You will also write a Checkout class which maintains a list (Vector) of DessertItem's.
 
 ### The DessertItem Class
 
-The __DessertItem class__ is an abstract superclass from which specific types 			  of DessertItems can be derived. It contains only one data member, a name. It also defines a number of methods. All of the DessertItem class methods except the getCost() method are defined in a generic way in the file Class-DessertItem, provided for you along with the other homework specific files in the directory. The getCost() method is an abstract method that is not defined in the DessertItem class because the method of determining the costs varies based on the type of item. Tax amounts should be rounded to the nearest cent. For example, the calculating the tax on a food item with a cost of 199 cents with a tax rate of 2.0% should be 4 cents. The complete specifications for the DessertItem class are provided in the file Class-DessertItem.  
+The __DessertItem class__ is an abstract superclass from which specific types of DessertItems can be derived. It contains only one data member, a name. It also defines a number of methods. All of the __DessertItem class__ methods except the _getCost()_ method are defined in a generic way in the file Class-DessertItem, provided for you along with the other homework specific files in the directory. The _getCost()_ method is an abstract method that is not defined in the DessertItem class because the method of determining the costs varies based on the type of item. Tax amounts should be rounded to the nearest cent. For example, the calculating the tax on a food item with a cost of 199 cents with a tax rate of 2.0% should be 4 cents. The complete specifications for the __DessertItem class__ are provided in the file Class-DessertItem.  
 
 
 ### The DessertShoppe Class
 
-The __DessertShoppe class__  contains constants such as the tax rate as well the name of the store, the maximum size of an item name and the width used to display the costs of the items on the receipt. Your code should use these constants wherever necessary! The DessertShoppe class also contains the cents2dollarsAndCentsmethod which takes an integer number of cents and returns it as a String formatted in dollars and cents. For example, 105 cents would be returned as "1.05".
+The __DessertShoppe class__  contains constants such as the tax rate as well the name of the store, the maximum size of an item name and the width used to display the costs of the items on the receipt. Your code should use these constants wherever necessary! The __DessertShoppe class__ also contains the _cents2dollarsAndCentsmethod_ which takes an integer number of cents and returns it as a String formatted in dollars and cents. For example, 105 cents would be returned as "1.05".
 
 ### The Derived Classes 
 
@@ -100,6 +100,7 @@ Total tax: 87
 
 Cost + Tax: 1418
 
+	
 	M & M Dessert Shoppe 
 	--------------------
     
@@ -111,8 +112,9 @@ Choc. Chip Ice Cream 		1.95
 4 @ 3.99 /dz.
 Oatmeal Raisin Cookies 		1.33
 
-Tax 						 .87 
-Total Cost 				   14.18
+Tax 				 .87 
+Total Cost 		       14.18
+
 
 Number of items: 6 
 
@@ -122,23 +124,24 @@ Total tax: 77
 
 Cost + Tax: 1269
 
+	
 	M & M Dessert Shoppe 
 	--------------------
 
 Strawberry Ice Cream 		1.45 
 Caramel Sundae with
-Vanilla Ice	Cream			1.55
+Vanilla Ice	Cream		1.55
 1.33 lbs. @ .89 /lb.
-Gummy Worms					1.18
+Gummy Worms			1.18
 4 @ 3.99 /dz.
 Chocolate Chip Cookies 		1.33
 1.50 lbs. @ 2.09 /lb. 
-Salt Water Taffy 			3.14
+Salt Water Taffy 		3.14
 3.00 lbs. @ 1.09 /lb.
-Candy Corn					3.27
+Candy Corn			3.27
 
-Tax							 .77
-Total Cost				   12.69
+Tax				 .77
+Total Cost		       12.69
 
 
 ```
@@ -160,44 +163,3 @@ Total Cost				   12.69
 
  	```
  
-
-
-
-# (GitHub-Flavored) Markdown Editor
-
-Basic useful feature list:
-
- * Ctrl+S / Cmd+S to save the file
- * Ctrl+Shift+S / Cmd+Shift+S to choose to save as Markdown or HTML
- * Drag and drop a file into here to load it
- * File contents are saved in the URL so you can share files
-
-
-I'm no good at writing sample / filler text, so go write something yourself.
-
-Look, a list!
-
- * foo
- * bar
- * baz
-
-And here's some code! :+1:
-
-```javascript
-$(function(){
-  $('div').html('I am a div.');
-});
-```
-
-This is [on GitHub](https://github.com/jbt/markdown-editor) so let me know if I've b0rked it somewhere.
-
-
-Props to Mr. Doob and his [code editor](http://mrdoob.com/projects/code-editor/), from which
-the inspiration to this, and some handy implementation hints, came.
-
-### Stuff used to make this:
-
- * [markdown-it](https://github.com/markdown-it/markdown-it) for Markdown parsing
- * [CodeMirror](http://codemirror.net/) for the awesome syntax-highlighted editor
- * [highlight.js](http://softwaremaniacs.org/soft/highlight/en/) for syntax highlighting in output code blocks
- * [js-deflate](https://github.com/dankogai/js-deflate) for gzipping of data to make it fit in URLs

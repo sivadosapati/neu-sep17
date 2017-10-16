@@ -35,7 +35,7 @@ the detail message of an exception should contain the values of all parameters a
           String line = null;
           
           try {
-              input = new RandomAccessFile(file, &quot;r&quot;);
+              input = new RandomAccessFile(file, "r");
               while ((line = input.readLine()) != null) {
                   System.out.println(line);
               }

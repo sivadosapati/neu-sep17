@@ -9,7 +9,7 @@
 
 This project is a big one, but hopefully the subject will be familiar. Your task is to write a program that plays the game of Hearts. Start with the prototype suggested in the text and enhance it until you get everything in the following UML class diagram.
 
-![UML diagram](https://github.com/sivadosapati/neu-sep17/blob/master/assignments/UML%20Diagram-Project2.png)  
+![UML diagram](https://github.com/sivadosapati/neu-sep17/blob/master/assignments/UML%20Diagram-Project2.jpg)  
 
 **Card** class:    
 Write the **Card** class first. Represent numbers and face-card values by integers ranging from 2 to 14, with 14 being the ace. Represent suits by integers as follows: 0 = clubs; 1 = diamonds; 2 = hearts; 3 = spades. Write a nice **display** method that uses switch statements to convert suit integers to the words, “clubs,” “diamonds,” and so on, and the numbers 11…14 to the words “Jack,” “Queen,” and so on. Use the **display** method to test this class.

@@ -35,7 +35,7 @@ the detail message of an exception should contain the values of all parameters a
           String line = null;
           
           try {
-              input = new RandomAccessFile(file, &quot;r&quot;);
+              input = new RandomAccessFile(file, "r");
               while ((line = input.readLine()) != null) {
                   System.out.println(line);
               }
@@ -56,7 +56,7 @@ the detail message of an exception should contain the values of all parameters a
   - -  The machine should be able to perform these actions.  
     *  Ask for **NEW USER** or **CURRENT USER** as the start.
     *  Create a **NEW USER** with a unique *bankAccountNumber* and *password*.
-    *  **CURRENT USER** should be able to login using phoneNumber and password.
+    *  **CURRENT USER** should be able to login using *bankAccountNumber* and *password*.
     *  **CURRENT USER** should be able to use *FORGOT PASSWORD*.
     *  *PASSWORD* can be resetted by validating the *name*, *age* and *phoneNumber* of the user.  
     *   After loggin the user should be able to use **availableBalance**, **withDrawal**, **deposit**, **recentTransactions**, **changePassword** and **exit**.  

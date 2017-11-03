@@ -1,0 +1,8 @@
+1 -  Define a Thread class
+		- Either subclass a Thread or
+		- Implement an interface named Runnable
+2 - Override a method named run() and have this method do what you want to do
+3 - Create the object of this Thread
+	- If you define a subclass of Thread - create an Object
+	- If you implement Runnable - create an object of Runnable and create a Thread on top of Runnable
+4 - Invoke a method named start() on the above Object

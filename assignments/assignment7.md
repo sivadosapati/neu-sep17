@@ -102,7 +102,7 @@ Examples
 Here is the prototype you can work with  
 
 ```java
-  public boolean findPartition (int arr[], int n) {
+  public boolean findPartition (int arr[]) {
       //your code
   }
 ```

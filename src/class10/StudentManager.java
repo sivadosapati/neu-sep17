@@ -6,15 +6,23 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.Scanner;
 
 public class StudentManager implements StudentManagerBehaviors {
 	public static String FILE = "students.txt";
+	public static String OBJECT_FILE = "students.dat";
 
 	public static void main(String[] args) throws IOException {
+
 		// StudentManagerBehaviors sm = new StudentManager();
 		StudentManagerBehaviors sm = new StudentManagerAlternateImplementation(FILE);
 		Scanner scanner = new Scanner(System.in);
+		studentOperations(scanner, sm);
+
+	}
+
+	public static void studentOperations(Scanner scanner, StudentManagerBehaviors sm) throws IOException {
 		while (true) {
 			System.out.println("Enter your command (count|add|delete|display|find|end)");
 			String x = scanner.nextLine();
@@ -55,7 +63,6 @@ public class StudentManager implements StudentManagerBehaviors {
 			}
 
 		}
-
 	}
 
 	/*
@@ -201,7 +208,7 @@ public class StudentManager implements StudentManagerBehaviors {
 
 }
 
-class Student {
+class Student implements Serializable {
 
 	public String toFile() {
 		return name + "~" + rollNumber;

@@ -12,7 +12,15 @@ import java.util.Map;
 public class StudentManagerAlternateImplementation implements StudentManagerBehaviors {
 
 	private Map<String, Student> students = new LinkedHashMap<String, Student>();
-	String fileName;
+	private String fileName;
+
+	protected Map<String, Student> getStudents() {
+		return students;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
 
 	public StudentManagerAlternateImplementation(String file) {
 		this.fileName = file;
@@ -31,7 +39,7 @@ public class StudentManagerAlternateImplementation implements StudentManagerBeha
 		writer.close();
 	}
 
-	private Map<String, Student> makeStudentsMap(String file) throws IOException {
+	protected Map<String, Student> makeStudentsMap(String file) throws IOException {
 		File f = new File(file);
 		BufferedReader reader = new BufferedReader(new FileReader(f));
 		Map<String, Student> students = new LinkedHashMap<String, Student>();

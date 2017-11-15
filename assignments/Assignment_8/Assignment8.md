@@ -181,25 +181,25 @@ sample output:
 {
 "gmps-camino" : [
 {
-"id" : "2903315183"
-"category" : "NEW"
-"year" : "2016"
-"make" : "Chevrolet"
-"model" : "4500 Gas"
-"trim" : "2WD Reg Cab 150&quot;"
-"type" : ""
-"price" : "56001.0"
+"id" : "2903315183",
+"category" : "NEW",
+"year" : "2016",
+"make" : "Chevrolet",
+"model" : "4500 Gas",
+"trim" : "2WD Reg Cab 150&quot;",
+"type" : "",
+"price" : "56001.0",
 "photo" : "http://inventory-dmg.assets-cdk.com/chrome_jpgs/2016/24174x90.jpg"
 },
 {
-"id" : "2774517143"
-"category" : "NEW"
-"year" : "2016"
-"make" : "Chevrolet"
-"model" : "Cruze"
-"trim" : "Sedan L"
-"type" : "CAR"
-"price" : "17495.0"
+"id" : "2774517143",
+"category" : "NEW",
+"year" : "2016",
+"make" : "Chevrolet",
+"model" : "Cruze",
+"trim" : "Sedan L",
+"type" : "CAR",
+"price" : "17495.0",
 "photo" : "http://inventory-dmg.assets-cdk.com/RTT/Chevrolet/2016/3077853/default/ext_GAZ_deg01x90.jpg"
 },
 .
@@ -207,14 +207,14 @@ sample output:
 .
 ..
 {
-"id" : "2963103683"
-"category" : "USED"
-"year" : "2016"
-"make" : "Toyota"
-"model" : "Corolla"
-"trim" : "4dr Sdn CVT Auto S (SE)"
-"type" : "CAR"
-"price" : "15995.0"
+"id" : "2963103683",
+"category" : "USED",
+"year" : "2016",
+"make" : "Toyota",
+"model" : "Corolla",
+"trim" : "4dr Sdn CVT Auto S (SE)",
+"type" : "CAR",
+"price" : "15995.0",
 "photo" : "http://inventory-dmg.assets-cdk.com/2/2/1/14136058122x90.jpg"
 }
 ]

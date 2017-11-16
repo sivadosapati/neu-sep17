@@ -53,7 +53,7 @@ public class FileCounter{
       counts to the respective variables.
       @param in the scanner to process
    */
-   private void read(Scanner in) throws IOException {
+   public void read(Scanner in) throws IOException {
     // your code
    }
 

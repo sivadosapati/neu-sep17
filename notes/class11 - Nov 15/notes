@@ -1,0 +1,9 @@
+Steps for creating a UI in Java (Swing application)
+
+1. Create a Container
+2. Create Components
+3. Set a Layout to the Container
+4. Add Components to the Container
+5. Create Listeners 
+6. Attach Listeners to components
+7. Make the Container visible

@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -14,7 +16,11 @@ public class StudentManagerAlternateImplementation implements StudentManagerBeha
 	private Map<String, Student> students = new LinkedHashMap<String, Student>();
 	private String fileName;
 
-	protected Map<String, Student> getStudents() {
+	public Collection<Student> getStudents() {
+		return new ArrayList<Student>(students.values());
+	}
+
+	public Map<String, Student> getStudentsMap() {
 		return students;
 	}
 
@@ -31,12 +37,16 @@ public class StudentManagerAlternateImplementation implements StudentManagerBeha
 		}
 	}
 
-	public void save() throws IOException {
-		PrintWriter writer = new PrintWriter(new FileWriter(new File(fileName)));
-		for (Student s : students.values()) {
-			writer.println(s.toFile());
+	public void save() {
+		try {
+			PrintWriter writer = new PrintWriter(new FileWriter(new File(fileName)));
+			for (Student s : students.values()) {
+				writer.println(s.toFile());
+			}
+			writer.close();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		writer.close();
 	}
 
 	protected Map<String, Student> makeStudentsMap(String file) throws IOException {
@@ -56,12 +66,12 @@ public class StudentManagerAlternateImplementation implements StudentManagerBeha
 	}
 
 	@Override
-	public int getTotalStudents() throws IOException {
+	public int getTotalStudents() {
 		return students.size();
 	}
 
 	@Override
-	public void saveStudent(Student student) throws IOException {
+	public void saveStudent(Student student) {
 		students.put(student.getRollNumber(), student);
 
 	}
@@ -75,17 +85,17 @@ public class StudentManagerAlternateImplementation implements StudentManagerBeha
 	}
 
 	@Override
-	public void deleteStudents(String roll) throws IOException {
+	public void deleteStudents(String roll) {
 		students.remove(roll);
 	}
 
 	@Override
-	public void displayStudents() throws IOException {
+	public void displayStudents() {
 		System.out.println(students.values());
 	}
 
 	@Override
-	public String findStudent(String rollNumber) throws IOException {
+	public String findStudent(String rollNumber) {
 		return getStudentNameForRollNumber(rollNumber);
 	}
 

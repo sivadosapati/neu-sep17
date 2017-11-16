@@ -16,10 +16,14 @@ public class StudentManagerWithObjectPersistence extends StudentManagerAlternate
 	}
 
 	@Override
-	public void save() throws IOException {
-		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(getFileName()));
-		oos.writeObject(getStudents());
-		oos.close();
+	public void save() {
+		try {
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(getFileName()));
+			oos.writeObject(getStudentsMap());
+			oos.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	protected Map<String, Student> makeStudentsMap(String file) throws IOException {

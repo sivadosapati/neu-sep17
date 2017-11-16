@@ -1,20 +1,23 @@
 package class10;
 
-import java.io.IOException;
+import java.util.Collection;
 
 public interface StudentManagerBehaviors {
 
-	int getTotalStudents() throws IOException;
+	public Collection<Student> getStudents();
 
-	void saveStudent(Student student) throws IOException;
+	int getTotalStudents();
+
+	void saveStudent(Student student);
 
 	String getStudentNameForRollNumber(String rollNumber);
 
-	void deleteStudents(String roll) throws IOException;
+	void deleteStudents(String roll);
 
-	void displayStudents() throws IOException;
+	void displayStudents();
 
-	String findStudent(String rollNumber) throws IOException;
+	String findStudent(String rollNumber);
 
-	void save() throws IOException;
+	void save();
+
 }

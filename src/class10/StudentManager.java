@@ -6,7 +6,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class StudentManager implements StudentManagerBehaviors {
@@ -71,20 +72,25 @@ public class StudentManager implements StudentManagerBehaviors {
 	 * @see class10.StudentManagerBehaviors#getTotalStudents()
 	 */
 	@Override
-	public int getTotalStudents() throws IOException {
-		File file = new File(FILE);
-		FileReader reader = new FileReader(file);
-		BufferedReader br = new BufferedReader(reader);
-		int count = 0;
-		while (true) {
-			String line = br.readLine();
-			if (line == null)
-				break;
-			count++;
+	public int getTotalStudents() {
+		try {
+			File file = new File(FILE);
+			FileReader reader = new FileReader(file);
+			BufferedReader br = new BufferedReader(reader);
+			int count = 0;
+			while (true) {
+				String line = br.readLine();
+				if (line == null)
+					break;
+				count++;
+			}
+			br.close();
+			reader.close();
+			return count;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
 		}
-		br.close();
-		reader.close();
-		return count;
 	}
 
 	/*
@@ -93,14 +99,18 @@ public class StudentManager implements StudentManagerBehaviors {
 	 * @see class10.StudentManagerBehaviors#saveStudent(class10.Student)
 	 */
 	@Override
-	public void saveStudent(Student student) throws IOException {
-		String data = student.toFile();
-		File f = new File(FILE);
-		FileWriter writer = new FileWriter(f, true);
-		PrintWriter pw = new PrintWriter(writer);
-		pw.print("\n" + data);
-		pw.close();
-		writer.close();
+	public void saveStudent(Student student) {
+		try {
+			String data = student.toFile();
+			File f = new File(FILE);
+			FileWriter writer = new FileWriter(f, true);
+			PrintWriter pw = new PrintWriter(writer);
+			pw.print("\n" + data);
+			pw.close();
+			writer.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/*
@@ -121,35 +131,39 @@ public class StudentManager implements StudentManagerBehaviors {
 	 * @see class10.StudentManagerBehaviors#deleteStudents(java.lang.String)
 	 */
 	@Override
-	public void deleteStudents(String roll) throws IOException {
-		File f = new File(FILE);
-		StringBuilder res = new StringBuilder();
-		FileReader reader = new FileReader(f);
-		BufferedReader br = new BufferedReader(reader);
-		int count = 0;
-		boolean addNewLine = false;
-		while (true) {
-			String line = br.readLine();
-			if (line == null)
-				break;
-			if (line.contains(roll)) {
-				System.out.println(line);
-				continue;
+	public void deleteStudents(String roll) {
+		try {
+			File f = new File(FILE);
+			StringBuilder res = new StringBuilder();
+			FileReader reader = new FileReader(f);
+			BufferedReader br = new BufferedReader(reader);
+			int count = 0;
+			boolean addNewLine = false;
+			while (true) {
+				String line = br.readLine();
+				if (line == null)
+					break;
+				if (line.contains(roll)) {
+					System.out.println(line);
+					continue;
+				}
+				if (addNewLine == true) {
+					res.append("\n");
+				} else {
+					addNewLine = true;
+				}
+				res.append(line);
 			}
-			if (addNewLine == true) {
-				res.append("\n");
-			} else {
-				addNewLine = true;
-			}
-			res.append(line);
+			br.close();
+			reader.close();
+			FileWriter writer = new FileWriter(f);
+			PrintWriter pw = new PrintWriter(writer);
+			pw.println(res.toString());
+			pw.close();
+			writer.close();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		br.close();
-		reader.close();
-		FileWriter writer = new FileWriter(f);
-		PrintWriter pw = new PrintWriter(writer);
-		pw.println(res.toString());
-		pw.close();
-		writer.close();
 
 	}
 
@@ -159,19 +173,44 @@ public class StudentManager implements StudentManagerBehaviors {
 	 * @see class10.StudentManagerBehaviors#displayStudents()
 	 */
 	@Override
-	public void displayStudents() throws IOException {
-		File f = new File(FILE);
-		StringBuilder res = new StringBuilder();
-		FileReader reader = new FileReader(f);
-		BufferedReader br = new BufferedReader(reader);
-		while (true) {
-			String line = br.readLine();
-			if (line == null)
-				break;
-			System.out.println(line);
+	public void displayStudents() {
+		try {
+			File f = new File(FILE);
+			StringBuilder res = new StringBuilder();
+			FileReader reader = new FileReader(f);
+			BufferedReader br = new BufferedReader(reader);
+			while (true) {
+				String line = br.readLine();
+				if (line == null)
+					break;
+				System.out.println(line);
+			}
+			br.close();
+			reader.close();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		br.close();
-		reader.close();
+
+	}
+
+	public Collection<Student> getStudents() {
+		try {
+			Collection<Student> students = new ArrayList<Student>();
+			File f = new File(FILE);
+			FileReader reader = new FileReader(f);
+			BufferedReader br = new BufferedReader(reader);
+			while (true) {
+				String line = br.readLine();
+				if (line == null)
+					break;
+				students.add(Student.makeStudentFromLine(line));
+			}
+			br.close();
+			reader.close();
+			return students;
+		} catch (Exception e) {
+			return new ArrayList<Student>();
+		}
 
 	}
 
@@ -181,65 +220,33 @@ public class StudentManager implements StudentManagerBehaviors {
 	 * @see class10.StudentManagerBehaviors#findStudent(java.lang.String)
 	 */
 	@Override
-	public String findStudent(String rollNumber) throws IOException {
-		File f = new File(FILE);
-		StringBuilder res = new StringBuilder();
-		FileReader reader = new FileReader(f);
-		BufferedReader br = new BufferedReader(reader);
-		while (true) {
-			String line = br.readLine();
-			if (line == null)
-				break;
-			if (line.contains(rollNumber)) {
-				return line.split("\\~")[0];
+	public String findStudent(String rollNumber) {
+		try {
+			File f = new File(FILE);
+			FileReader reader = new FileReader(f);
+			BufferedReader br = new BufferedReader(reader);
+			while (true) {
+				String line = br.readLine();
+				if (line == null)
+					break;
+				if (line.contains(rollNumber)) {
+					return line.split("\\~")[0];
+				}
 			}
+			br.close();
+			reader.close();
+			return null;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}
-		br.close();
-		reader.close();
-		return null;
 
 	}
 
 	@Override
-	public void save() throws IOException {
+	public void save() {
 		// TODO Auto-generated method stub
 
 	}
 
-}
-
-class Student implements Serializable {
-
-	public String toFile() {
-		return name + "~" + rollNumber;
-	}
-
-	public String toString() {
-		return toFile();
-	}
-
-	private String name;
-
-	public Student(String name2, String roll) {
-		this.name = name2;
-		this.rollNumber = roll;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getRollNumber() {
-		return rollNumber;
-	}
-
-	public void setRollNumber(String rollNumber) {
-		this.rollNumber = rollNumber;
-	}
-
-	private String rollNumber;
 }

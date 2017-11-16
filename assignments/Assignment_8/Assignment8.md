@@ -187,8 +187,8 @@ sample output:
 "make" : "Chevrolet",
 "model" : "4500 Gas",
 "trim" : "2WD Reg Cab 150&quot;",
-"type" : "",
-"price" : "56001.0",
+"type" : null,
+"price" : 56001.0,
 "photo" : "http://inventory-dmg.assets-cdk.com/chrome_jpgs/2016/24174x90.jpg"
 },
 {
@@ -199,7 +199,7 @@ sample output:
 "model" : "Cruze",
 "trim" : "Sedan L",
 "type" : "CAR",
-"price" : "17495.0",
+"price" : 17495.0,
 "photo" : "http://inventory-dmg.assets-cdk.com/RTT/Chevrolet/2016/3077853/default/ext_GAZ_deg01x90.jpg"
 },
 .
@@ -214,7 +214,7 @@ sample output:
 "model" : "Corolla",
 "trim" : "4dr Sdn CVT Auto S (SE)",
 "type" : "CAR",
-"price" : "15995.0",
+"price" : 15995.0,
 "photo" : "http://inventory-dmg.assets-cdk.com/2/2/1/14136058122x90.jpg"
 }
 ]
